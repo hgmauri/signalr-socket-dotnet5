@@ -1,0 +1,1 @@
+# signalr-socket-netcore2.1
