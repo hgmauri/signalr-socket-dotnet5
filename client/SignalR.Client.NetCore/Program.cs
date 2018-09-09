@@ -11,7 +11,10 @@ namespace SignalR.Client.NetCore
         static void Main(string[] args)
         {
             connection = new HubConnectionBuilder()
-            .WithUrl("http://localhost:7717/notifications")
+            .WithUrl("http://localhost:7717/notifications", options =>
+                {
+                    options.UseDefaultCredentials = true;
+                })
             .Build();
 
             ConnectToServer();
@@ -35,8 +38,9 @@ namespace SignalR.Client.NetCore
 
             try
             {
+
                 await connection.StartAsync();
-                
+
                 Console.WriteLine("Connection started");
             }
             catch (Exception ex)
