@@ -18,6 +18,11 @@ namespace SignalR.Hub.Server
             Console.WriteLine($"User: {user} says {message}");
         }
 
+        public Task SendPrivateMessage(string user, string message)
+        {
+            return Clients.User(user).SendAsync("ReceiveMessage", message);
+        }
+
         public Task SendMessageToCaller(string message)
         {
             return Clients.Caller.SendAsync("ReceiveMessage", message);

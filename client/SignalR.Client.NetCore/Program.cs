@@ -15,6 +15,7 @@ namespace SignalR.Client.NetCore
             .Build();
 
             ConnectToServer();
+
             string message = "Hello world!";
             SendMessage("Henrique", message);
 
@@ -35,6 +36,7 @@ namespace SignalR.Client.NetCore
             try
             {
                 await connection.StartAsync();
+                
                 Console.WriteLine("Connection started");
             }
             catch (Exception ex)
