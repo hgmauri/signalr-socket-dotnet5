@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
 
-namespace SignalR.Hub.Server
+namespace SignalR.Server.NetCore
 {
     public static class UserHandler
     {
@@ -12,7 +11,7 @@ namespace SignalR.Hub.Server
     }
 
     //[Authorize]
-    public class NotifyHub : Microsoft.AspNetCore.SignalR.Hub
+    public class NotifyHub : Hub
     {
         public async Task SendMessage(string user, string message)
         {

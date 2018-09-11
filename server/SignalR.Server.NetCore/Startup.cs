@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 
-namespace SignalR.Hub.Server
+namespace SignalR.Server.NetCore
 {
     public class Startup
     {
@@ -47,11 +47,14 @@ namespace SignalR.Hub.Server
             {
                 app.UseHsts();
             }
+
             app.UseSwagger();
-                app.UseSwaggerUI(c => {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Angular 6 + NET Core 2.1 + SignalR v0.1");
-                    c.RoutePrefix = "swagger";
-                });
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Angular 6 + NET Core 2.1 + SignalR v0.1");
+                c.RoutePrefix = "swagger";
+            });
+
             app.UseCors("MyCorsPolicy");
             app.UseSignalR(routes => routes.MapHub<NotifyHub>("/notifications"));
             app.UseHttpsRedirection();

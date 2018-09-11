@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 
-namespace SignalR.Hub.Server.Controllers
+namespace SignalR.Server.NetCore.Controllers
 {
     [Route("api/[controller]")]
     public class MessagesController : Controller

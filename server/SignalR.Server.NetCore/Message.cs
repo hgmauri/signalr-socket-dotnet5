@@ -1,4 +1,4 @@
-namespace SignalR.Hub.Server
+namespace SignalR.Server.NetCore
 {
     public class Message
     {
