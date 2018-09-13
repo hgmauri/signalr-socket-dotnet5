@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
 
 namespace SignalR.Server.NetCore
@@ -10,7 +11,7 @@ namespace SignalR.Server.NetCore
         public static HashSet<string> ConnectedIds = new HashSet<string>();
     }
 
-    //[Authorize]
+    [Authorize]
     public class NotifyHub : Hub
     {
         public async Task SendMessage(string user, string message)
