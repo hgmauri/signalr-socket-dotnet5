@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using SignalR.Socker.Server.Abstraction;
+using SignalR.Socket.Server.Abstraction;
 
-namespace SignalR.Socker.Server
+namespace SignalR.Socket.Server
 {
     public class Startup
     {

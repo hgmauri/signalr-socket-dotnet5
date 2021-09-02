@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR;
 
-namespace SignalR.Socker.Server.Abstraction
+namespace SignalR.Socket.Server.Abstraction
 {
     public class SocketHub : Hub
     {

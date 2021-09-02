@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SignalR.Socker.Server.Abstraction
+namespace SignalR.Socket.Server.Abstraction
 {
     public static class UserSocket
     {

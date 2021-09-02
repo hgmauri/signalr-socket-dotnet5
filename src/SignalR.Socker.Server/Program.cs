@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace SignalR.Socker.Server
+namespace SignalR.Socket.Server
 {
     public class Program
     {

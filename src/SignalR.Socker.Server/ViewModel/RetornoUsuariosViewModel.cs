@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using SignalR.Socker.Server.Abstraction;
+using SignalR.Socket.Server.Abstraction;
 
-namespace SignalR.Socker.Server.ViewModel
+namespace SignalR.Socket.Server.ViewModel
 {
     public class RetornoUsuariosViewModel
     {

@@ -1,10 +1,10 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
-using SignalR.Socker.Server.Abstraction;
-using SignalR.Socker.Server.ViewModel;
+using SignalR.Socket.Server.Abstraction;
+using SignalR.Socket.Server.ViewModel;
 
-namespace SignalR.Socker.Server.Controllers
+namespace SignalR.Socket.Server.Controllers
 {
     [ApiController]
     [Route("[controller]")]
