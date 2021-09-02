@@ -11,7 +11,7 @@ namespace SignalR.Socket.Server
 {
     public class Startup
     {
-        const string CORS_SIGNALR_POLICY_NAME = "signalr";
+        const string CorsSignalrPolicyName = "signalr";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -34,7 +34,7 @@ namespace SignalR.Socket.Server
 
             services.AddCors(options =>
             {
-                options.AddPolicy(CORS_SIGNALR_POLICY_NAME, builder => builder
+                options.AddPolicy(CorsSignalrPolicyName, builder => builder
                         .AllowAnyHeader()
                         .AllowAnyMethod()
                         .SetIsOriginAllowed((host) => true)
@@ -55,7 +55,7 @@ namespace SignalR.Socket.Server
 
             app.UseHttpsRedirection();
 
-            app.UseCors(CORS_SIGNALR_POLICY_NAME);
+            app.UseCors(CorsSignalrPolicyName);
             app.UseRouting();
 
             app.UseAuthorization();

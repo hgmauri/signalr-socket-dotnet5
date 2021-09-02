@@ -24,7 +24,7 @@ namespace SignalR.Socket.Server.Controllers
             var groups = users
                 .OrderBy(p => p.UserName)
                 .GroupBy(g => g.Environment)
-                .Select(s => new RetornoUsuariosViewModel
+                .Select(s => new UsersViewModel
                 {
                     Total = s.Count(),
                     Environment = s.Key,

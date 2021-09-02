@@ -49,22 +49,22 @@ namespace SignalR.Socket.Server.Abstraction
             {
                 var user = UserSocket.UsersSocket.FirstOrDefault(p => p.ConnectionId == clientId);
 
-                if (user != null)
-                {
-                    var novoUser = new Users
-                    {
-                        UserName = userName,
-                        Application = user.Application,
-                        ConnectionId = user.ConnectionId,
-                        Environment = user.Environment,
-                        DateTime = user.DateTime
-                    };
+                if (user == null) 
+                    return Task.CompletedTask;
 
-                    var removido = UserSocket.UsersSocket.Remove(user);
-                    if (removido)
-                    {
-                        UserSocket.UsersSocket.Add(novoUser);
-                    }
+                var newUser = new Users
+                {
+                    UserName = userName,
+                    Application = user.Application,
+                    ConnectionId = user.ConnectionId,
+                    Environment = user.Environment,
+                    DateTime = user.DateTime
+                };
+
+                var removed = UserSocket.UsersSocket.Remove(user);
+                if (removed)
+                {
+                    UserSocket.UsersSocket.Add(newUser);
                 }
             }
 

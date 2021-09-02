@@ -11,18 +11,18 @@ namespace SignalR.Socket.Sender
         {
             await Task.Delay(3000);
 
-            var sender1 = SenderClient1("john");
+            var sender1 = SenderClient("john");
 
-            var sender2 = SenderClient1("papa");
+            var sender2 = SenderClient("papa");
 
-            var sender3 = SenderClient1("marry");
+            var sender3 = SenderClient("marry");
 
             await Task.WhenAll(sender1, sender2, sender3);
 
             Console.ReadKey();
         }
 
-        static async Task SenderClient1(string nomeUsuario)
+        static async Task SenderClient(string userName)
         {
             var connection = new HubConnectionBuilder()
                 .WithUrl("http://localhost:5005/sockethub", options =>
@@ -33,7 +33,7 @@ namespace SignalR.Socket.Sender
                 .Build();
 
             await connection.StartAsync();
-            await connection.SendAsync("UpdateClient", nomeUsuario);
+            await connection.SendAsync("UpdateClient", userName);
 
             Console.WriteLine("Connection started.");
 
@@ -47,9 +47,8 @@ namespace SignalR.Socket.Sender
             {
                 Thread.Sleep(400);
 
-                await connection.SendAsync($"SendNotification", $"{nomeUsuario} - {DateTime.Now:G}");
-
-                Console.WriteLine($"Send Message: {nomeUsuario} - {DateTime.Now:G}");
+                await connection.SendAsync($"SendNotification", $"{userName} - {DateTime.Now:G}");
+                Console.WriteLine($"Send Message: {userName} - {DateTime.Now:G}");
             }
         }
     }

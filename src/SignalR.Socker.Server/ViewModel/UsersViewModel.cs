@@ -3,7 +3,7 @@ using SignalR.Socket.Server.Abstraction;
 
 namespace SignalR.Socket.Server.ViewModel
 {
-    public class RetornoUsuariosViewModel
+    public class UsersViewModel
     {
         public IEnumerable<Users> Users { get; set; }
         public string Environment { get; set; }

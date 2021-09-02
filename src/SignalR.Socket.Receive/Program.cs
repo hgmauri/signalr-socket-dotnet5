@@ -40,7 +40,6 @@ namespace SignalR.Socket.Receive
         private static Task ReceiveAsync(string id, string runningTime)
         {
             Console.WriteLine($"Receive Message: {id} - {runningTime}");
-
             return Task.CompletedTask;
         }
     }
