@@ -40,9 +40,7 @@ namespace SignalR.Socket.Server
                         .SetIsOriginAllowed((host) => true)
                         .AllowCredentials()
                 );
-
             });
-
             services.AddControllers();
         }
 
@@ -54,10 +52,8 @@ namespace SignalR.Socket.Server
             }
 
             app.UseHttpsRedirection();
-
             app.UseCors(CorsSignalrPolicyName);
             app.UseRouting();
-
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

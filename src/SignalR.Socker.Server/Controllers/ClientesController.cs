@@ -21,7 +21,7 @@ namespace SignalR.Socket.Server.Controllers
         public ActionResult<string> GetClients()
         {
             var users = UserSocket.UsersSocket?.ToList();
-            var groups = users
+            var groups = users?
                 .OrderBy(p => p.UserName)
                 .GroupBy(g => g.Environment)
                 .Select(s => new UsersViewModel

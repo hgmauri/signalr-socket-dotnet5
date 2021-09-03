@@ -49,7 +49,7 @@ namespace SignalR.Socket.Server.Abstraction
             {
                 var user = UserSocket.UsersSocket.FirstOrDefault(p => p.ConnectionId == clientId);
 
-                if (user == null) 
+                if (user == null)
                     return Task.CompletedTask;
 
                 var newUser = new Users
